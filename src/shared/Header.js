@@ -6,11 +6,26 @@ const Header = () => {
   return (
     <div className="navbar bg-base-100 pt-4">
       <div className="flex-1">
-        <Link>
+        <Link to="/">
           <img className="w-20 rounded-full" src={logo} alt="" />
         </Link>
       </div>
       <div className="flex-none gap-2">
+        <div>
+          <Link>
+            <button className="btn btn-outline btn-info">Info</button>
+          </Link>
+        </div>
+        <div>
+          <Link>
+            <button className="btn btn-outline btn-info">Info</button>
+          </Link>
+        </div>
+        <div>
+          <Link to="/blog">
+            <button className="btn btn-outline btn-info">Blog</button>
+          </Link>
+        </div>
         <div className="form-control">
           <input
             type="text"

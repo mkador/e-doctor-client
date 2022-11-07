@@ -8,10 +8,12 @@ const BannerItem = ({ slideItem }) => {
         <img src={image} className="w-full" alt="" />
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24  top-1/4">
-        <h1 className="text-6xl font-bold">Complete Health Solution</h1>
+        <h1 className="text-6xl font-bold  text-white">
+          Complete Health Solution
+        </h1>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-48 w-2/5  top-1/2">
-        <p className="text-2xl font-semibold text-center">
+        <p className="text-2xl font-semibold text-center  text-white">
           Consulting a healthcare professional, buying medicine, ordering lab
           tests and improving your health and wellbeing with e-Doctor, <br />
           All can be done 24/7 with e-Doctor
