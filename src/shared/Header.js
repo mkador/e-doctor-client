@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '../../src/assets/images/logo/logo.png'
 
 const Header = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 pt-4">
       <div className="flex-1">
-        <Link className="btn btn-ghost normal-case text-4xl">e-Doctor</Link>
+        <Link>
+          <img className="w-20 rounded-full" src={logo} alt="" />
+        </Link>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
