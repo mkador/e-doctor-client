@@ -1,9 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { FaGoogle, FaGithub } from 'react-icons/fa'
 import login1 from '../../../../src/assets/images/login/login1.png'
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider'
+import { GoogleAuthProvider } from 'firebase/auth'
+import useTitle from '../../../hooks/useTtile'
 
 const Login = () => {
+  useTitle('login')
+  const { login } = useContext(AuthContext)
+  const { googlePopUp } = useContext(AuthContext)
+  const googleProvider = new GoogleAuthProvider()
+  const handleWithLogin = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const name = form.name.value
+    const email = form.email.value
+    const password = form.password.value
+    form.reset()
+    login(email, password)
+      .then((result) => {
+        const user = result.user
+        console.log(user)
+      })
+      .catch((error) => console.error(error))
+  }
+  const handleGooglePopUp = () => {
+    googlePopUp(googleProvider)
+      .then((result) => {
+        const user = result.user
+      })
+      .catch((error) => console.error(error))
+  }
   return (
     <div className="hero w-full my-5">
       <div className="hero-content flex-col lg:flex-row grid md:grid-cols-2">
@@ -11,7 +39,7 @@ const Login = () => {
           <img className="w-full" src={login1} alt="" />
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit="" className="card-body">
+          <form onSubmit={handleWithLogin} className="card-body">
             <h1 className="text-center text-3xl font-semibold">Login now!</h1>
             <div className="form-control">
               <label className="label">
@@ -43,15 +71,13 @@ const Login = () => {
             <div className="form-control mt-6">
               <input className="btn btn-primary" type="submit" value="login" />
             </div>
-            <button onClick="" className="btn btn-outline btn-success">
+            <button
+              onClick={handleGooglePopUp}
+              className="btn btn-outline btn-success"
+            >
               {' '}
               <FaGoogle className="mr-2 text-orange-600 text-2xl"></FaGoogle>{' '}
               Google
-            </button>
-            <button onClick="" className="btn btn-outline btn-success">
-              {' '}
-              <FaGithub className="mr-2 text-orange-600 text-2xl"></FaGithub>{' '}
-              Github
             </button>
           </form>
           <p className="text-center">

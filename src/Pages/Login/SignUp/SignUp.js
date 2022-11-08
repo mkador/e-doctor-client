@@ -1,8 +1,27 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import signup1 from '../../../../src/assets/images/login/signup1.png'
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider'
+import useTitle from '../../../hooks/useTtile'
 
 const SignUp = () => {
+  useTitle('signup')
+  const { createUser } = useContext(AuthContext)
+  const handleWithSignUp = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const name = form.name.value
+    const email = form.email.value
+    const password = form.password.value
+    form.reset()
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user
+        console.log(user)
+      })
+      .catch((error) => console.error(error))
+  }
   return (
     <div className="hero w-full my-5">
       <div className="hero-content flex-col lg:flex-row grid md:grid-cols-2">
@@ -10,7 +29,7 @@ const SignUp = () => {
           <img className=" w-full" src={signup1} alt="" />
         </div>
         <div className="card flex-shrink-0 w-3/4  shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handleWithSignUp} className="card-body">
             <h1 className="text-white text-center text-3xl font-semibold">
               Sign Up!
             </h1>
