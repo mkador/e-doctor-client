@@ -12,13 +12,13 @@ const Header = () => {
       </div>
       <div className="flex-none gap-2">
         <div>
-          <Link>
-            <button className="btn btn-outline btn-info">Info</button>
+          <Link to="/login">
+            <button className="btn btn-outline btn-info">LogIn</button>
           </Link>
         </div>
         <div>
-          <Link>
-            <button className="btn btn-outline btn-info">Info</button>
+          <Link to="/signup">
+            <button className="btn btn-outline btn-info">Sign Up</button>
           </Link>
         </div>
         <div>
