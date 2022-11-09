@@ -1,8 +1,11 @@
-import React, { useContext, useEffect } from 'react'
-import { useLoaderData } from 'react-router-dom'
+import React, { useContext, useEffect, useState } from 'react'
+import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider'
+import Review from './Review'
 
 const Service = () => {
+  const [reviews, setReviews] = useState([])
+  const [loading, setLoading] = useState(false)
   const { user } = useContext(AuthContext)
   const {
     _id,
@@ -18,6 +21,7 @@ const Service = () => {
   } = useLoaderData()
 
   const handleAddReviews = (e) => {
+    setLoading(true)
     e.preventDefault()
     const form = e.target
     const description = form.description.value
@@ -27,6 +31,8 @@ const Service = () => {
       service_name: title,
       description,
       email: user?.email,
+      name: user?.displayName,
+      photoURL: user?.photoURL,
     }
 
     fetch('http://localhost:5000/reviews', {
@@ -38,9 +44,9 @@ const Service = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if (data.acknowledged) {
           alert('Added reviews')
+          setLoading(false)
           form.reset()
         }
       })
@@ -50,8 +56,8 @@ const Service = () => {
   useEffect(() => {
     fetch('http://localhost:5000/reviews')
       .then((res) => res.json())
-      .then((data) => console.log(data))
-  }, [])
+      .then((data) => setReviews(data))
+  }, [loading])
 
   return (
     <div>
@@ -97,21 +103,49 @@ const Service = () => {
         <h1 className="text-5xl text-orange-700 text-center mt-5 mb-5">
           Review section
         </h1>
-
-        <div>
-          <form onSubmit={handleAddReviews}>
-            <div className="text-center">
-              <textarea
-                name="description"
-                className="textarea textarea-success"
-                placeholder="description"
-              ></textarea>
-            </div>
-            <div className="text-center">
-              <input className="btn" type="submit" value="Add Service" />
-            </div>
-          </form>
+        <div className="ml-20 mt-6 w-3/4 mb-6 ">
+          <table className="table w-full">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Email</th>
+                <th>Comments</th>
+                <th>Edit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reviews.map((review) => (
+                <Review key={_id} review={review}></Review>
+              ))}
+            </tbody>
+          </table>
         </div>
+        {user?.email ? (
+          <div>
+            <form onSubmit={handleAddReviews}>
+              <div className="text-center">
+                <textarea
+                  name="description"
+                  className="textarea textarea-success"
+                  placeholder="Comments Here.."
+                ></textarea>
+              </div>
+              <div className="text-center mt-4">
+                <input className="btn" type="submit" value="Add Review" />
+              </div>
+            </form>
+          </div>
+        ) : (
+          <p className="text-center">
+            <small className="text-white mr-3">
+              You are not Login, If You want to review ? Please Login First
+            </small>
+            <Link className="text-green-700 text-bold text-xl" to="/login">
+              Login
+            </Link>
+          </p>
+        )}
       </div>
     </div>
   )
