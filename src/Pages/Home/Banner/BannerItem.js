@@ -14,14 +14,16 @@ const BannerItem = ({ slideItem }) => {
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-48 w-2/5  top-1/2">
         <p className="text-2xl font-semibold text-center  text-white">
-          Consulting a healthcare professional, buying medicine, ordering lab
-          tests and improving your health and wellbeing with e-Doctor, <br />
+          We believe in prevention rather than treatment. Our health checks help
+          you stay on top of your health. Choose the one that is right for you.{' '}
+          <br />
           All can be done 24/7 with e-Doctor
         </p>
       </div>
       <div className="absolute flex justify-end transform -translate-y-1/2 left-24 w-2/5  top-3/4">
-        <button className="btn btn-outline btn-warning mr-5">Warning</button>
-        <button className="btn btn-outline btn-warning">Warning</button>
+        <button className="btn btn-outline btn-warning mr-5">
+          Let's Start
+        </button>
       </div>
       <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
         <a href={`#slideItem${prev}`} className="btn btn-circle">

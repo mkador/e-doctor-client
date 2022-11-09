@@ -2,19 +2,37 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const ServicesCards = ({ service }) => {
-  const { _id, img, price, title } = service
+  const { _id, img, price, title, rating, description } = service
   return (
     <div className="mt-5 card w-96 bg-base-100 shadow-xl image-full">
-      <figure>
-        <img src={img} alt="Shoes" />
-      </figure>
       <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <p className="text-xl font-bold">Price: $ {price}</p>
-        <div className="card-actions justify-end">
-          <Link to={`/checkout/${_id}`}>
-            <button className="btn btn-outline btn-success">Buy Now</button>
-          </Link>
+        <div>
+          <figure>
+            <img src={img} alt="" />
+          </figure>
+        </div>
+        <h3 className="text-3xl text-warning">{title}</h3>
+        <>
+          {description?.length > 100 ? (
+            <>
+              {' '}
+              {description.slice(0, 100) + '...'}{' '}
+              <Link to={`/services/${_id}`}>
+                <button className="btn btn-link">View Details</button>
+              </Link>{' '}
+            </>
+          ) : (
+            <>{description}</>
+          )}
+        </>
+        <br />
+        <div className="mr-0 text-center card-actions justify-end">
+          <div className="badge badge-outline text-bold bg-orange-700  p-3">
+            Price: {price}
+          </div>
+          <div className="badge badge-outline text-bold bg-orange-700  p-3">
+            Rating: {rating}
+          </div>
         </div>
       </div>
     </div>

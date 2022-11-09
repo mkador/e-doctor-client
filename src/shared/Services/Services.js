@@ -12,15 +12,17 @@ const Services = () => {
   return (
     <div className="text-center mt-6 mb-6 ">
       <div>
-        <h2 className="text-5xl font-semibold">Services</h2>
-        <p>
-          the majority have suffered alteration in some form, by injected
-          humour,
-          <br /> randomised words which don't look even slightly believable.{' '}
+        <h2 className="text-5xl font-semibold mt-5 mb-3 text-orange-700">
+          Services
+        </h2>
+        <p className="text-white">
+          You can get a consultation and prescription whenever you need.
+          Patients and doctors can keep their previous consultation history and
+          view online prescriptions.
         </p>
       </div>
 
-      <div className="grid m-3 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid m-3 gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4">
         {services.map((service) => (
           <ServicesCards key={service._id} service={service}></ServicesCards>
         ))}

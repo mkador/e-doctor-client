@@ -14,9 +14,8 @@ const ServicesAll = () => {
       <div>
         <h2 className="text-5xl font-semibold">All Services</h2>
         <p>
-          the majority have suffered alteration in some form, by injected
-          humour,
-          <br /> randomised words which don't look even slightly believable.{' '}
+          We believe in prevention rather than treatment. Our health checks help
+          you stay on top of your health. Choose the one that is right for you.
         </p>
       </div>
 

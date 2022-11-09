@@ -64,9 +64,9 @@ const Header = () => {
                 </Link>
               </div>
               <div>
-                <Link to="/reviews">
+                <Link to="/addServices">
                   <button className="btn btn-outline btn-info">
-                    Add Reviews
+                    Add Service
                   </button>
                 </Link>
               </div>
