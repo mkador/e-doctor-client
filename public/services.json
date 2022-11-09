@@ -1,0 +1,81 @@
+[
+    {
+        
+        "service_id": "04",
+        "title": "Home Health Check",
+        "img": "https://i.ibb.co/T2cpBd5/888.jpg",
+        "age": "21-40",
+        "price":"20.00",
+        "rating": "4.5",
+        "description": "A customized health check tailored to your needs includes 20 lab tests and one video consultation with a Praava Family Doctor. We will be at your doorstep with a single call to collect your sample anywhere within Dhaka.!",
+        "Consultation": "Consultation with a Praava Family Doctor",
+        "Diagnostics": "Complete Blood Count + ESR Glucose Fasting Hemoglobin A1c Lipid Profile Liver Function Test Iron ProfileRenal Function Test Thyroid Function Test Urine Routine Microscopic Examination PLUS EX-Ray  Chest PA View Ultrasound Whole Abdomen",
+        "Taka": " Tk 10,900.00 BDT"
+        
+    },
+    {
+       
+        "service_id": "05",
+        "title": "COVID-19 Supplementary Health Check",
+        "img": "https://i.ibb.co/ydCbDN3/5555.jpg",
+        "age": "21-35",
+        "price": "20.00",
+        "rating": "5.0",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
+        "Consultation": "Consultation with a Praava Family Doctor",
+        "Diagnostics": "Complete Blood Count + ESR Glucose Fasting Hemoglobin A1c Lipid Profile Liver Function Test Iron ProfileRenal Function Test Thyroid Function Test Urine Routine Microscopic Examination PLUS EX-Ray  Chest PA View Ultrasound Whole Abdomen",
+        "Taka": " Tk 10,900.00 BDT"
+    },
+    {
+        
+        "service_id": "01",
+        "rating": "5.0",
+        "title": "Cardiac Screening",
+        "img": "https://i.ibb.co/R6Z2nFM/55.jpg",
+        "price": "200.00",
+        "age": "21-35",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
+        "Consultation": "Consultation with a Praava Family Doctor",
+        "Diagnostics": "Complete Blood Count + ESR Glucose Fasting Hemoglobin A1c Lipid Profile Liver Function Test Iron ProfileRenal Function Test Thyroid Function Test Urine Routine Microscopic Examination PLUS EX-Ray  Chest PA View Ultrasound Whole Abdomen",
+        "Taka": " Tk 10,900.00 BDT"
+    },
+    {
+       
+        "service_id": "02",
+        "title": "Thyroid & Hyperlipidemia Package",
+        "img": "https://i.ibb.co/5MvmD2g/88.jpg",
+        "price": "150.00",
+        "age": "41-60",
+        "rating": "4.5",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
+        "Consultation": "Consultation with a Praava Family Doctor",
+        "Diagnostics": "Complete Blood Count + ESR Glucose Fasting Hemoglobin A1c Lipid Profile Liver Function Test Iron ProfileRenal Function Test Thyroid Function Test Urine Routine Microscopic Examination PLUS EX-Ray  Chest PA View Ultrasound Whole Abdomen",
+        "Taka": " Tk 10,900.00 BDT"
+    },
+    {
+        
+        "service_id": "03",
+        "title": "COVID-19 Supportive Package",
+        "img": "https://i.ibb.co/wh7t3N3/555.jpg",
+        "price": "30.00",
+        "age": "21-40",
+        "rating": "5.0",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
+        "Consultation": "Consultation with a Praava Family Doctor",
+        "Diagnostics": "Complete Blood Count + ESR Glucose Fasting Hemoglobin A1c Lipid Profile Liver Function Test Iron ProfileRenal Function Test Thyroid Function Test Urine Routine Microscopic Examination PLUS EX-Ray  Chest PA View Ultrasound Whole Abdomen",
+        "Taka": " Tk 10,900.00 BDT"
+    },
+    {
+        
+        "service_id": "06",
+        "title": "Diabetes Screening ",
+        "img": "https://i.ibb.co/KzCG8qr/8888.jpg",
+        "price": "20.00",
+        "age": "21-40",
+        "rating": "5.0",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius veniam nostrum dolores nemo quas. Minima ullam, veniam, nesciunt quae dolore animi blanditiis deserunt, ea esse dolorum ipsum quibusdam ipsa! Corrupti at, excepturi, fugiat aut nihil neque aliquid sapiente dignissimos provident, animi molestiae ipsum. Repudiandae ipsa id nihil reiciendis soluta eos ducimus pariatur, nam architecto tenetur quo quos commodi est libero repellendus vitae. Fuga numquam nulla nam, facere neque expedita voluptatibus pariatur necessitatibus vel, dignissimos ab esse magni accusamus eveniet ad corrupti, architecto nostrum. Aspernatur ex quibusdam at cum nulla!",
+        "Consultation": "Consultation with a Praava Family Doctor",
+        "Diagnostics": "Complete Blood Count + ESR Glucose Fasting Hemoglobin A1c Lipid Profile Liver Function Test Iron ProfileRenal Function Test Thyroid Function Test Urine Routine Microscopic Examination PLUS EX-Ray  Chest PA View Ultrasound Whole Abdomen",
+        "Taka": " Tk 10,900.00 BDT"
+    }
+]
