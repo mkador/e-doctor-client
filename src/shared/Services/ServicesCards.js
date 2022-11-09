@@ -12,19 +12,14 @@ const ServicesCards = ({ service }) => {
           </figure>
         </div>
         <h3 className="text-3xl text-warning">{title}</h3>
-        <>
-          {description?.length > 100 ? (
-            <>
-              {' '}
-              {description.slice(0, 100) + '...'}{' '}
-              <Link to={`/services/${_id}`}>
-                <button className="btn btn-link">View Details</button>
-              </Link>{' '}
-            </>
-          ) : (
-            <>{description}</>
-          )}
-        </>
+        {description?.length > 100 ? (
+          <p> {description.slice(0, 100) + '...'} </p>
+        ) : (
+          <p>{description}</p>
+        )}
+        <Link to={`/services/${_id}`}>
+          <button className="btn btn-link">View Details</button>
+        </Link>{' '}
         <br />
         <div className="mr-0 text-center card-actions justify-end">
           <div className="badge badge-outline text-bold bg-orange-700  p-3">

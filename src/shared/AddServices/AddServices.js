@@ -9,22 +9,18 @@ const AddServices = () => {
   const handleAddService = (e) => {
     e.preventDefault()
     const form = e.target
-    const firstName = form.firstName.value
-    const lastName = form.lastName.value
-    const phone = form.phone.value
-    const email = form.email.value
-    const photoURL = form.photoURL.value
-    const message = form.message.value
+    const img = form.img.value
+    const title = form.title.value
+    const rating = form.rating.value
+    const price = form.price.value
+    const description = form.description.value
 
     const addService = {
-      service: _id,
-      serviceName: title,
-      firstName: firstName,
-      lastName: lastName,
-      phone: phone,
-      email: email,
-      photoURL: photoURL,
-      message: message,
+      img,
+      title,
+      description,
+      rating,
+      price,
     }
 
     fetch('http://localhost:5000/allServices', {
@@ -51,45 +47,40 @@ const AddServices = () => {
       <form onSubmit={handleAddService}>
         <div className="grid grid-cols-1 lg:grid-cols-2 md:grid-cols-2 p-6 gap-4">
           <input
-            name="firstName"
+            name="img"
             type="text"
-            placeholder="First Name"
+            placeholder="img URL"
             className="input input-bordered input-success w-full required "
           />
           <input
-            name="lastName"
+            name="title"
             type="text"
-            placeholder="Last Name"
+            placeholder="title"
             className="input input-bordered input-success w-full required "
           />
           <input
-            name="phone"
+            name="rating"
             type="text"
-            placeholder="Phone Number"
+            placeholder="rating"
             className="input input-bordered input-success w-full required "
           />
+
           <input
-            name="photoURL"
+            name="price"
             type="text"
-            placeholder="photoURL"
-            className="input input-bordered input-success w-full required "
-          />
-          <input
-            name="email"
-            type="email"
-            placeholder="Email"
+            placeholder="price"
             className="input input-bordered input-success w-full required "
           />
         </div>
         <div className="text-center">
           <textarea
-            name="message"
+            name="description"
             className="textarea textarea-success"
-            placeholder="Your Message"
+            placeholder="description"
           ></textarea>
         </div>
         <div className="text-center">
-          <input className="btn" type="submit" value="Add" />
+          <input className="btn" type="submit" value="Add Service" />
         </div>
       </form>
     </div>

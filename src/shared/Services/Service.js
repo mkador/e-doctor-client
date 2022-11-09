@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useLoaderData } from 'react-router-dom'
+import { AuthContext } from '../../context/AuthProvider/AuthProvider'
 
 const Service = () => {
+  const { user } = useContext(AuthContext)
   const {
     _id,
     img,
@@ -14,6 +16,43 @@ const Service = () => {
     title,
     Taka,
   } = useLoaderData()
+
+  const handleAddReviews = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const description = form.description.value
+
+    const addReviews = {
+      service_id: _id,
+      service_name: title,
+      description,
+      email: user?.email,
+    }
+
+    fetch('http://localhost:5000/reviews', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(addReviews),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        if (data.acknowledged) {
+          alert('Added reviews')
+          form.reset()
+        }
+      })
+      .catch((error) => console.error(error))
+  }
+
+  useEffect(() => {
+    fetch('http://localhost:5000/reviews')
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+  }, [])
+
   return (
     <div>
       <div>
@@ -30,10 +69,12 @@ const Service = () => {
                 <p className="text-white">{Consultation}</p>
               </div>
               <p className="text-white py-6">{description}</p>
-              <div>
-                <h4 className="text-orange-400 text-bold">Diagnostics:</h4>
-                <p className="text-white py-6">{Diagnostics}</p>
-              </div>
+              {Diagnostics && (
+                <div>
+                  <h4 className="text-orange-400 text-bold">Diagnostics:</h4>
+                  <p className="text-white py-6">{Diagnostics}</p>
+                </div>
+              )}
 
               <div className="mr-0 text-center card-actions justify-end">
                 <div className="badge badge-outline text-xl text-bold bg-orange-700  p-3">
@@ -52,9 +93,26 @@ const Service = () => {
           </div>
         </div>
       </div>
-      <h1 className="text-5xl text-orange-700 text-center mt-5 mb-5">
-        Review section
-      </h1>
+      <div>
+        <h1 className="text-5xl text-orange-700 text-center mt-5 mb-5">
+          Review section
+        </h1>
+
+        <div>
+          <form onSubmit={handleAddReviews}>
+            <div className="text-center">
+              <textarea
+                name="description"
+                className="textarea textarea-success"
+                placeholder="description"
+              ></textarea>
+            </div>
+            <div className="text-center">
+              <input className="btn" type="submit" value="Add Service" />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
