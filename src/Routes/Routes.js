@@ -7,6 +7,7 @@ import AddServices from '../shared/AddServices/AddServices'
 import MyReviews from '../shared/MyReviews/MyReviews'
 import Service from '../shared/Services/Service'
 import ServicesAll from '../shared/Services/ServicesAll'
+import PrivateRoutes from './PrivateRoutes'
 
 const { createBrowserRouter } = require('react-router-dom')
 
@@ -37,7 +38,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/services/:id',
-        element: <Service></Service>,
+        element: (
+          <PrivateRoutes>
+            <Service></Service>
+          </PrivateRoutes>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:5000/services/${params.id}`),
       },
@@ -51,7 +56,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/myReviews',
-        element: <MyReviews></MyReviews>,
+        element: (
+          <PrivateRoutes>
+            <MyReviews></MyReviews>
+          </PrivateRoutes>
+        ),
       },
     ],
   },

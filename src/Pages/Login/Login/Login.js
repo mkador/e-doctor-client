@@ -1,5 +1,5 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle, FaGithub } from 'react-icons/fa'
 import login1 from '../../../../src/assets/images/login/login1.png'
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider'
@@ -11,6 +11,10 @@ const Login = () => {
   const { login } = useContext(AuthContext)
   const { googlePopUp } = useContext(AuthContext)
   const googleProvider = new GoogleAuthProvider()
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const from = location.state?.from?.pathname || '/'
   const handleWithLogin = (e) => {
     e.preventDefault()
     const form = e.target
@@ -22,6 +26,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user
         console.log(user)
+        navigate(from, { replace: true })
       })
       .catch((error) => console.error(error))
   }
@@ -29,6 +34,7 @@ const Login = () => {
     googlePopUp(googleProvider)
       .then((result) => {
         const user = result.user
+        navigate(from, { replace: true })
       })
       .catch((error) => console.error(error))
   }
