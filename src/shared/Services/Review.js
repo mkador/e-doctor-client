@@ -5,8 +5,7 @@ import useTitle from '../../hooks/useTtile'
 const Review = ({ review, handleDelete }) => {
   useTitle('reviews')
   const { user } = useContext(AuthContext)
-  const [reviews, setReviews] = useState([])
-  const { _id, email, name, photoURL, description } = review
+  const { email, name, photoURL, description } = review
 
   return (
     <tr>
@@ -29,7 +28,7 @@ const Review = ({ review, handleDelete }) => {
       </th>
       <th>
         <button
-          onClick={() => handleDelete(_id)}
+          onClick={() => handleDelete(email)}
           className="btn btn-circle btn-outline"
         >
           <svg
