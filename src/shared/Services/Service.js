@@ -38,7 +38,7 @@ const Service = () => {
       photoURL: user?.photoURL,
     }
 
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://e-doctor-server.vercel.app/reviews', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -60,7 +60,7 @@ const Service = () => {
     setLoading(true)
     const proceed = window.confirm('Are You Sure to Delete')
     if (proceed) {
-      fetch(`http://localhost:5000/reviews/${id}`, {
+      fetch(`https://e-doctor-server.vercel.app/reviews/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -72,7 +72,7 @@ const Service = () => {
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/reviews')
+    fetch('https://e-doctor-server.vercel.app/reviews')
       .then((res) => res.json())
       .then((data) => setReviews(data))
   }, [loading])

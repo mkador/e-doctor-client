@@ -25,7 +25,7 @@ const AddServices = () => {
       price,
     }
 
-    fetch('http://localhost:5000/allServices', {
+    fetch('https://e-doctor-server.vercel.app/allServices', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
