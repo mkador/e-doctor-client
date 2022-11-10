@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider'
+import useTitle from '../../hooks/useTtile'
 import Review from './Review'
 
 const Service = () => {
+  useTitle('service')
   const [reviews, setReviews] = useState([])
   const [loading, setLoading] = useState(false)
   const { user } = useContext(AuthContext)
@@ -21,8 +23,8 @@ const Service = () => {
   } = useLoaderData()
 
   const handleAddReviews = (e) => {
-    setLoading(true)
     e.preventDefault()
+    setLoading(true)
     const form = e.target
     const description = form.description.value
 
@@ -51,6 +53,21 @@ const Service = () => {
         }
       })
       .catch((error) => console.error(error))
+  }
+
+  const handleDelete = (id) => {
+    setLoading(true)
+    const proceed = window.confirm('Are You Sure to Delete')
+    if (proceed) {
+      fetch(`http://localhost:5000/reviews/${id}`, {
+        method: 'DELETE',
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+          setLoading(false)
+        })
+    }
   }
 
   useEffect(() => {
@@ -116,7 +133,11 @@ const Service = () => {
             </thead>
             <tbody>
               {reviews.map((review) => (
-                <Review key={_id} review={review}></Review>
+                <Review
+                  key={review?._id}
+                  review={review}
+                  handleDelete={handleDelete}
+                ></Review>
               ))}
             </tbody>
           </table>

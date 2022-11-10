@@ -57,7 +57,7 @@ const Header = () => {
               </div>
 
               <div>
-                <Link to="/reviews">
+                <Link to="/myReviews">
                   <button className="btn btn-outline btn-info">
                     My Reviews
                   </button>

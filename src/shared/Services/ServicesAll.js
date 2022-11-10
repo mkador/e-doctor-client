@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import useTitle from '../../hooks/useTtile'
 import ServicesCards from './ServicesCards'
 
 const ServicesAll = () => {
+  useTitle('all-services')
   const [allServices, setAllServices] = useState([])
   useEffect(() => {
     fetch('http://localhost:5000/allServices')

@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { AuthContext } from '../../context/AuthProvider/AuthProvider'
+import useTitle from '../../hooks/useTtile'
 
 const AddServices = () => {
+  useTitle('addService')
   const { _id, title } = useLoaderData
   const { user } = useContext(AuthContext)
 

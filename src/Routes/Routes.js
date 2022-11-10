@@ -4,6 +4,7 @@ import Home from '../Pages/Home/Home/Home'
 import Login from '../Pages/Login/Login/Login'
 import SignUp from '../Pages/Login/SignUp/SignUp'
 import AddServices from '../shared/AddServices/AddServices'
+import MyReviews from '../shared/MyReviews/MyReviews'
 import Service from '../shared/Services/Service'
 import ServicesAll from '../shared/Services/ServicesAll'
 
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: '/addServices',
         element: <AddServices></AddServices>,
+      },
+      {
+        path: '/myReviews',
+        element: <MyReviews></MyReviews>,
       },
     ],
   },

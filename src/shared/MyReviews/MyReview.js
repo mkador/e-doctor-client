@@ -1,12 +1,9 @@
-import React, { useContext, useState } from 'react'
-import { AuthContext } from '../../context/AuthProvider/AuthProvider'
+import React from 'react'
 import useTitle from '../../hooks/useTtile'
 
-const Review = ({ review, handleDelete }) => {
-  useTitle('reviews')
-  const { user } = useContext(AuthContext)
-  const [reviews, setReviews] = useState([])
-  const { _id, email, name, photoURL, description } = review
+const MyReview = ({ myReview, handleDelete }) => {
+  useTitle('my-review')
+  const { _id, email, name, photoURL, description } = myReview
 
   return (
     <tr>
@@ -52,4 +49,4 @@ const Review = ({ review, handleDelete }) => {
   )
 }
 
-export default Review
+export default MyReview
